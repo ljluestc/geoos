@@ -7,6 +7,7 @@ import (
 type Strategy interface {
     Area(space.Geometry) (float64, error)
     ToMultiPart(g space.Geometry) (space.Geometry, error)
+	DissolvePolygons(geoms []space.Geometry, otps space.DissolvePolygonsOptions) (space.Geometry, error)
 }
 
 type normalStrategy struct{}
